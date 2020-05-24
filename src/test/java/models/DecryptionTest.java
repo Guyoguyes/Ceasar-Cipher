@@ -7,11 +7,25 @@ import static org.junit.Assert.*;
 public class DecryptionTest {
 
     @Test
-    public void decryption_returnDecryptWord_String(){
-        Decryption testDecryption = new Decryption();
-        String expected = "How do you feel";
-        assertEquals(expected, testDecryption.Decryption("How do you feel"));
+    public void decryption_instantiatesCorrectly_true(){
+        Decryption testDecryption = new Decryption("HI", 21);
+        assertTrue(testDecryption instanceof Decryption);
     }
+
+    @Test
+    public void decryption_testDecryptionOfWords_String(){
+        Decryption testDecryption = new Decryption("yhe owh uoy", 23);
+        assertEquals("How are you", testDecryption.setDecryptWord());
+    }
+
+
+//
+//    @Test
+//    public void decryption_returnsError_true(){
+//        Decryption testDecryption = new Decryption();
+//        boolean expected = true;
+//        assertEquals(expected, testDecryption.Decryption(false));
+//    }
 
 
 }
