@@ -1,10 +1,17 @@
+package models;
+
 public class Encryption {
     private String encryptWord = "";
     private int shiftKey;
     private String errorMessage;
+    private String text;
+
 
 
     public  Encryption(String text, int shiftKey) {
+        this.text = text;
+        this.shiftKey = shiftKey;
+
         if (shiftKey < 0 || shiftKey > 26) {
             errorMessage = "Error Key must be between 0 and 26";
             for (int i = 0; i < text.length(); i++) {
@@ -35,10 +42,12 @@ public class Encryption {
     }
 
     public String getEncryptWord(){
-        return encryptWord;
+        return encryptWord;    // test fails
+//        return "HI";     Test passes
     }
 
     public String getErrorMessage(){
+
         return errorMessage;
     }
 

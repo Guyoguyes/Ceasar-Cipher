@@ -1,3 +1,6 @@
+package models;
+
+import models.Encryption;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -7,7 +10,7 @@ public class EncryptionTest {
     @Test
     public void encrpyt_returnsEncryptedWord_String(){
         Encryption testEncryption = new Encryption("JK", 2);
-        String  expected = "JK";
+        String  expected = "HI";
         assertEquals(expected, testEncryption.getEncryptWord());
     }
 
