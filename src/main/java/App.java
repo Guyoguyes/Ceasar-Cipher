@@ -1,3 +1,4 @@
+import models.Decryption;
 import models.Encryption;
 
 import java.io.BufferedReader;
@@ -9,16 +10,29 @@ public class App {
 //        Scanner scanner = new Scanner(System.in);
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("------------Caeser Cipher ----------------");
+        System.out.println("------------Caesar Cipher ----------------");
+        System.out.println("Would you like to Encrypt OR Decrypt ");
 
-        System.out.println("Enter what you would like to encrypt");
-        String encryptWord = bufferedReader.readLine();
-        System.out.println("Enter Key");
-        String stringEncryptionKey = bufferedReader.readLine();
-        int encryptionKey = Integer.parseInt(stringEncryptionKey);
-        Encryption encryption = new Encryption(encryptWord, encryptionKey);
-        String cipher = encryption.getEncryptWord();
-        System.out.println("Your Encrypted word is ");
-        System.out.println(cipher);
+        String choosenOption = bufferedReader.readLine();
+
+        if(choosenOption.equals("Encrypt")){
+            System.out.println("Type word to be Encrypted");
+            String encryptionWord = bufferedReader.readLine();
+            System.out.println("Type the key");
+            String stringEncryptionKey = bufferedReader.readLine();
+            int encryptKey = Integer.parseInt(stringEncryptionKey);
+            Encryption encryption = new Encryption(encryptionWord, encryptKey);
+            System.out.println("Your Encrypt Word is");
+            System.out.println(encryption.setEncryptWord());
+        }else if(choosenOption.equals("Decrypt")){
+            System.out.println("Type word to be Decrypt");
+            String decryptionWord = bufferedReader.readLine();
+            System.out.println("Type the description key");
+            String stringDecryptionKey = bufferedReader.readLine();
+            int decryptionKey = Integer.parseInt(stringDecryptionKey);
+            Decryption decryption = new Decryption(decryptionWord, decryptionKey);
+            System.out.println("Your decrypted word is");
+            System.out.println(decryption.setDecryptWord());
+        }
     }
 }

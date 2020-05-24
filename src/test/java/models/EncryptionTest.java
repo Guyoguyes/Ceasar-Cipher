@@ -11,7 +11,7 @@ public class EncryptionTest {
     public void encrpyt_returnsEncryptedWord_String(){
         Encryption testEncryption = new Encryption("XY", 2);
         String  expected = "HI";
-        assertEquals(expected, testEncryption.getEncryptWord());
+        assertEquals(expected, testEncryption.setEncryptWord());
     }
 
     @Test

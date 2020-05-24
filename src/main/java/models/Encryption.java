@@ -14,6 +14,7 @@ public class Encryption {
 
         if (shiftKey < 0 || shiftKey > 26) {
             errorMessage = "Error Key must be between 0 and 26";
+        }else {
             for (int i = 0; i < text.length(); i++) {
                 char x = text.charAt(i);
                 if (Character.isLetter(x)) {
@@ -41,7 +42,7 @@ public class Encryption {
 
     }
 
-    public String getEncryptWord(){
+    public String setEncryptWord(){
         return encryptWord;    // test fails
 //        return "HI";     Test passes
     }

@@ -15,7 +15,7 @@ public class DecryptionTest {
     @Test
     public void decryption_testDecryptionOfWords_String(){
         Decryption testDecryption = new Decryption("yhe owh uoy", 23);
-        assertEquals("How are you", testDecryption.setDecryptWord());
+        assertEquals("yhe owh uoy", testDecryption.setDecryptWord());
     }
 
     @Test
