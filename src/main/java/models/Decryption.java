@@ -56,6 +56,10 @@ public class Decryption {
         return shiftKey;
     }
 
+    public String getErrorMessage(){
+        return errorMessage;
+    }
+
 
 
 

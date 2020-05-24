@@ -18,6 +18,12 @@ public class DecryptionTest {
         assertEquals("How are you", testDecryption.setDecryptWord());
     }
 
+    @Test
+    public void decryption_returnsError_String(){
+        Decryption testDecryption = new Decryption("Hello Dude", 32);
+        assertEquals("Error Key must be between 0 and 26", testDecryption.getErrorMessage());
+    }
+
 
 //
 //    @Test
