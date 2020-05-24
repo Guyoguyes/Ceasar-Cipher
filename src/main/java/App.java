@@ -21,18 +21,28 @@ public class App {
             System.out.println("Type the key");
             String stringEncryptionKey = bufferedReader.readLine();
             int encryptKey = Integer.parseInt(stringEncryptionKey);
-            Encryption encryption = new Encryption(encryptionWord, encryptKey);
-            System.out.println("Your Encrypt Word is");
-            System.out.println(encryption.setEncryptWord());
+            if(encryptKey < 0 || encryptKey > 26){
+                System.out.println("Error try again");
+            }else{
+                Encryption encryption = new Encryption(encryptionWord, encryptKey);
+                System.out.println("Your Encrypt Word is");
+                System.out.println(encryption.setEncryptWord());
+            }
+
         }else if(choosenOption.equals("Decrypt")){
             System.out.println("Type word to be Decrypt");
             String decryptionWord = bufferedReader.readLine();
             System.out.println("Type the description key");
             String stringDecryptionKey = bufferedReader.readLine();
             int decryptionKey = Integer.parseInt(stringDecryptionKey);
-            Decryption decryption = new Decryption(decryptionWord, decryptionKey);
-            System.out.println("Your decrypted word is");
-            System.out.println(decryption.setDecryptWord());
+            if (decryptionKey < 0 || decryptionKey > 26){
+                System.out.println("Error try again");
+            }else{
+                Decryption decryption = new Decryption(decryptionWord, decryptionKey);
+                System.out.println("Your decrypted word is");
+                System.out.println(decryption.setDecryptWord());
+            }
+
         }
     }
 }
