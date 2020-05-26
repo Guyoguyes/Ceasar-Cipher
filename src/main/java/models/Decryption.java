@@ -20,15 +20,15 @@ public class Decryption {
                 char x = text.charAt(i);
                 if (Character.isLetter(x)) {
                     if (Character.isLowerCase(x)) {
-                        char y = (char) (x + shiftKey);
-                        if (y > 'z') {
+                        char y = (char) (x - shiftKey);
+                        if (y < 'a') {
                             decryptWord += (char) (x - (26 - shiftKey));
                         } else {
                             decryptWord += y;
                         }
                     } else if (Character.isUpperCase(x)) {
-                        char y = (char) (x + shiftKey);
-                        if (y > 'Z') {
+                        char y = (char) (x - shiftKey);
+                        if (y < 'A') {
                             decryptWord += (char) (x - (26 - shiftKey));
                         } else {
                             decryptWord += y;
